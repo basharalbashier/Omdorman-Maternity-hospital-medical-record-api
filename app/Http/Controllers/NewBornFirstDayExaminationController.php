@@ -85,4 +85,17 @@ class NewBornFirstDayExaminationController extends Controller
     {
         //
     }
+
+
+    public function patientid($id)
+    {
+        
+        return NewBornFirstDayExamination::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return NewBornFirstDayExamination::where('file_id', '=' ,$id)->get();
+    }
 }

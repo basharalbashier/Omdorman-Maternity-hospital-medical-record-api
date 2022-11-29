@@ -85,4 +85,17 @@ class InvestigationRequestFormController extends Controller
     {
         //
     }
+
+
+    public function patientid($id)
+    {
+        
+        return InvestigationRequestForm::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return InvestigationRequestForm::where('file_id', '=' ,$id)->get();
+    }
 }

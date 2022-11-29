@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Validation\Rules\Unique;
 
 return new class extends Migration
 {
@@ -15,19 +16,11 @@ return new class extends Migration
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
-            $table->string('unit');
-            $table->string('booking');
             $table->string('name');
             $table->string('age');
-            $table->string('tel');
+            $table->string('tel')->unique();
             $table->string('occup');
-            $table->string('residance');
-            $table->string('husband');
-            $table->string('husband_tel');
-            $table->string('husband_occup');
-            $table->string('blood');
-            $table->text('allerg')->nullable();
-            $table->string('insurance');
+            $table->string('user_id');
             $table->timestamps();
         });
     }

@@ -28,7 +28,6 @@ class NurseProgressNote extends Model
         'urine_protein',
         'skin_color',
         'remarks',
-
         'nurse_id',
         'patient_id',
         'file_id',

@@ -85,4 +85,16 @@ class RegularDrugController extends Controller
     {
         //
     }
+
+    public function patientid($id)
+    {
+        
+        return RegularDrug::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return RegularDrug::where('file_id', '=' ,$id)->get();
+    }
 }

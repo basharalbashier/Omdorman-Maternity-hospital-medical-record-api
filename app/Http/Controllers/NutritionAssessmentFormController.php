@@ -85,4 +85,17 @@ class NutritionAssessmentFormController extends Controller
     {
         //
     }
+
+
+    public function patientid($id)
+    {
+        
+        return NutritionAssessmentForm::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return NutritionAssessmentForm::where('file_id', '=' ,$id)->get();
+    }
 }

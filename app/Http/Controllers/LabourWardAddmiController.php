@@ -128,4 +128,16 @@ class LabourWardAddmiController extends Controller
     {
         //
     }
+
+    public function patientid($id)
+    {
+        
+        return LabourWardAddmi::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return LabourWardAddmi::where('file_id', '=' ,$id)->get();
+    }
 }

@@ -85,4 +85,18 @@ class HouseOffInPatientFollowUpController extends Controller
     {
         //
     }
+
+
+
+    public function patientid($id)
+    {
+        
+        return HouseOffInPatientFollowUp::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return HouseOffInPatientFollowUp::where('file_id', '=' ,$id)->get();
+    }
 }

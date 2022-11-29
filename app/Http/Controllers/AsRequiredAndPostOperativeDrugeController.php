@@ -37,6 +37,7 @@ class AsRequiredAndPostOperativeDrugeController extends Controller
     public function store(StoreAsRequiredAndPostOperativeDrugeRequest $request)
     {
         //
+        return  AsRequiredAndPostOperativeDruge::create($request->all());
     }
 
     /**
@@ -48,6 +49,7 @@ class AsRequiredAndPostOperativeDrugeController extends Controller
     public function show(AsRequiredAndPostOperativeDruge $asRequiredAndPostOperativeDruge)
     {
         //
+
     }
 
     /**
@@ -82,5 +84,18 @@ class AsRequiredAndPostOperativeDrugeController extends Controller
     public function destroy(AsRequiredAndPostOperativeDruge $asRequiredAndPostOperativeDruge)
     {
         //
+    }
+
+
+    public function patientid($id)
+    {
+        
+        return AsRequiredAndPostOperativeDruge::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return AsRequiredAndPostOperativeDruge::where('file_id', '=' ,$id)->get();
     }
 }

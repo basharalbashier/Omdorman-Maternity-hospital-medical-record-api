@@ -37,6 +37,8 @@ class DischargeDrugsController extends Controller
     public function store(StoreDischargeDrugsRequest $request)
     {
         //
+        return  DischargeDrugs::create($request->all());
+
     }
 
     /**
@@ -82,5 +84,17 @@ class DischargeDrugsController extends Controller
     public function destroy(DischargeDrugs $dischargeDrugs)
     {
         //
+    }
+
+    public function patientid($id)
+    {
+        
+        return DischargeDrugs::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return DischargeDrugs::where('file_id', '=' ,$id)->get();
     }
 }

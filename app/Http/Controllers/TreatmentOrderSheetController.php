@@ -85,4 +85,16 @@ class TreatmentOrderSheetController extends Controller
     {
         //
     }
+
+    public function patientid($id)
+    {
+        
+        return TreatmentOrderSheet::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return TreatmentOrderSheet::where('file_id', '=' ,$id)->get();
+    }
 }

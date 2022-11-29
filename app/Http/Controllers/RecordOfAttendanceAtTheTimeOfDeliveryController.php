@@ -85,4 +85,17 @@ class RecordOfAttendanceAtTheTimeOfDeliveryController extends Controller
     {
         //
     }
+
+
+    public function patientid($id)
+    {
+        
+        return RecordOfAttendanceAtTheTimeOfDelivery::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return RecordOfAttendanceAtTheTimeOfDelivery::where('file_id', '=' ,$id)->get();
+    }
 }

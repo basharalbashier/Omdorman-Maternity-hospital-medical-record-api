@@ -27,6 +27,9 @@ class PatientController extends Controller
     public function create()
     {
         //
+
+
+
     }
 
     /**
@@ -39,26 +42,26 @@ class PatientController extends Controller
     {
         //
 
-        $request->validate([
-     
-            'unit'=>'required',
-            'booking'=>'required',
+        $fields =   $request->validate([
             'name'=>'required',
             'age'=>'required',
             'tel'=>'required',
             'occup'=>'required',
-            'residance'=>'required',
-            'husband'=>'required',
-            'husband_tel'=>'required',
-            'husband_occup'=>'required',
-            'blood'=>'required',
-            'insurance'=>'required',
-
-
-
-
+            'user_id'=>'required',
         ]);
+
+        $user=patient::where('tel', $fields['tel'])->first();
+
+        if($user){
+
+            return response($user,205);
+        }
         return patient::create($request->all());
+    }
+
+    public function find($id){
+
+        return patient::find($id);
     }
 
     /**
@@ -67,10 +70,10 @@ class PatientController extends Controller
      * @param  \App\Models\patient  $patient
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($unit)
     {
         //
-        return patient::find($id);
+        return patient::where([['unit', '=',$unit]])->get();
     }
 
 

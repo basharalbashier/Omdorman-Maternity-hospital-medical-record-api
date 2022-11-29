@@ -85,4 +85,16 @@ class LabourRecordController extends Controller
     {
         //
     }
+
+    public function patientid($id)
+    {
+        
+        return LabourRecord::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return LabourRecord::where('file_id', '=' ,$id)->get();
+    }
 }

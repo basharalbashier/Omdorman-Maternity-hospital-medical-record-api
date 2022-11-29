@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreAntAddmRequest;
 use App\Http\Requests\UpdateAntAddmRequest;
 use App\Models\AntAddm;
+use Illuminate\Http\Request;
 
 class AntAddmController extends Controller
 {
@@ -35,30 +36,30 @@ class AntAddmController extends Controller
      * @param  \App\Http\Requests\StoreAntAddmRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAntAddmRequest $request)
+    public function store(Request $request)
     {
         //
 
         $request->validate([
      
-            'unit'=>'required',
-            'complaint'=>'required',
-            'history_presenting_illness'=>'required',
-            'pulse'=>'required',
-            'bp'=>'required',
-            'temp'=>'required',
-            'general_condition'=>'required',
-            'cvs_chest_examination'=>'required',
-            'fundel_height'=>'required',
-            'lie'=>'required',
-            'presentation'=>'required',
-            'fhr'=>'required',
-            'fm'=>'required',
-            'vaginal_exam'=>'required',
-            'diagnosis'=>'required',
-            'immediat_instrunction'=>'required',
-            'dr_id'=>'required',
-            'patient_id'=>'required',
+            // 'unit'=>'required',
+            // 'complaint'=>'required',
+            // 'history_presenting_illness'=>'required',
+            // 'pulse'=>'required',
+            // 'bp'=>'required',
+            // 'temp'=>'required',
+            // 'general_condition'=>'required',
+            // 'cvs_chest_examination'=>'required',
+            // 'fundel_height'=>'required',
+            // 'lie'=>'required',
+            // 'presentation'=>'required',
+            // 'fhr'=>'required',
+            // 'fm'=>'required',
+            // 'vaginal_exam'=>'required',
+            // 'diagnosis'=>'required',
+            // 'immediat_instrunction'=>'required',
+            // 'dr_id'=>'required',
+            // 'patient_id'=>'required',
 
 
 
@@ -76,6 +77,7 @@ class AntAddmController extends Controller
     public function show($id)
     {
         //
+        //        return ReqularDrugsDosage::where('regular_drug_id', $drugId);
         return AntAddm::find($id);
     }
 
@@ -111,5 +113,19 @@ class AntAddmController extends Controller
     public function destroy(AntAddm $antAddm)
     {
         //
+    }
+
+
+
+    public function patientid($id)
+    {
+        
+        return AntAddm::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return AntAddm::where('file_id', '=' ,$id)->get();
     }
 }

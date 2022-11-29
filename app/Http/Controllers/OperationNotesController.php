@@ -85,4 +85,17 @@ class OperationNotesController extends Controller
     {
         //
     }
+
+
+    public function patientid($id)
+    {
+        
+        return OperationNotes::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return OperationNotes::where('file_id', '=' ,$id)->get();
+    }
 }

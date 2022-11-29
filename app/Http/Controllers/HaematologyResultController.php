@@ -85,4 +85,16 @@ class HaematologyResultController extends Controller
     {
         //
     }
+
+    public function patientid($id)
+    {
+        
+        return HaematologyResult::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return HaematologyResult::where('file_id', '=' ,$id)->get();
+    }
 }

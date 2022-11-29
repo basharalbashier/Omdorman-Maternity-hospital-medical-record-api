@@ -14,10 +14,11 @@ class patient extends Model
 
         // 'unit',
         // 'booking',
-        // 'name',
-        // 'age',
-        // 'tel',
-        // 'occup',
+        'name',
+        'age',
+        'tel',
+        'occup',
+        'user_id'
         // 'residance',
         // 'husband',
         // 'husband_tel',

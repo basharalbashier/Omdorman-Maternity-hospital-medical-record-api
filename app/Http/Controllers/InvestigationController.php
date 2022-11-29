@@ -85,4 +85,18 @@ class InvestigationController extends Controller
     {
         //
     }
+
+
+
+    public function patientid($id)
+    {
+        
+        return Investigation::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return Investigation::where('file_id', '=' ,$id)->get();
+    }
 }

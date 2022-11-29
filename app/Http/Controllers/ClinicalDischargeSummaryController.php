@@ -37,6 +37,9 @@ class ClinicalDischargeSummaryController extends Controller
     public function store(StoreClinicalDischargeSummaryRequest $request)
     {
         //
+
+        return  ClinicalDischargeSummary::create($request->all());
+
     }
 
     /**
@@ -82,5 +85,18 @@ class ClinicalDischargeSummaryController extends Controller
     public function destroy(ClinicalDischargeSummary $clinicalDischargeSummary)
     {
         //
+    }
+
+
+    public function patientid($id)
+    {
+        
+        return ClinicalDischargeSummary::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return ClinicalDischargeSummary::where('file_id', '=' ,$id)->get();
     }
 }

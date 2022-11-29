@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreAnticoagulationChartRequest;
 use App\Http\Requests\UpdateAnticoagulationChartRequest;
 use App\Models\AnticoagulationChart;
+use Illuminate\Http\Request;
 
 class AnticoagulationChartController extends Controller
 {
@@ -34,9 +35,10 @@ class AnticoagulationChartController extends Controller
      * @param  \App\Http\Requests\StoreAnticoagulationChartRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAnticoagulationChartRequest $request)
+    public function store(Request $request)
     {
         //
+        return  AnticoagulationChart::create($request->all());
     }
 
     /**
@@ -82,5 +84,17 @@ class AnticoagulationChartController extends Controller
     public function destroy(AnticoagulationChart $anticoagulationChart)
     {
         //
+    }
+
+    public function patientid($id)
+    {
+        
+        return AnticoagulationChart::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return AnticoagulationChart::where('file_id', '=' ,$id)->get();
     }
 }

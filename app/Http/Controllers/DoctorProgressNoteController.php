@@ -85,4 +85,17 @@ class DoctorProgressNoteController extends Controller
     {
         //
     }
+
+
+    public function patientid($id)
+    {
+        
+        return DoctorProgressNote::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return DoctorProgressNote::where('file_id', '=' ,$id)->get();
+    }
 }

@@ -85,4 +85,16 @@ class StatisticFormController extends Controller
     {
         //
     }
+
+    public function patientid($id)
+    {
+        
+        return StatisticForm::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return StatisticForm::where('file_id', '=' ,$id)->get();
+    }
 }

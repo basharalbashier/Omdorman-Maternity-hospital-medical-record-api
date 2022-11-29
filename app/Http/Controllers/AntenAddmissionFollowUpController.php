@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Http\Requests\StoreAntenAddmissionFollowUpRequest;
-use App\Http\Requests\UpdateAntenAddmissionFollowUpRequest;
+use Illuminate\Http\Request;
+use App\Http\Requests\StoreuSResponseRequest;
+use App\Http\Requests\UpdateuSResponseRequest;
 use App\Models\AntenAddmissionFollowUp;
+use App\Models\uSResponse;
+
 
 class AntenAddmissionFollowUpController extends Controller
 {
@@ -16,6 +18,7 @@ class AntenAddmissionFollowUpController extends Controller
     public function index()
     {
         //
+        return AntenAddmissionFollowUp::all();
     }
 
     /**
@@ -31,56 +34,72 @@ class AntenAddmissionFollowUpController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreAntenAddmissionFollowUpRequest  $request
+     * @param  \App\Http\Requests\StoreuSResponseRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAntenAddmissionFollowUpRequest $request)
+    public function store(Request $request)
     {
         //
+
+        return AntenAddmissionFollowUp::create($request->all());
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\AntenAddmissionFollowUp  $antenAddmissionFollowUp
+     * @param  \App\Models\uSResponse  $uSResponse
      * @return \Illuminate\Http\Response
      */
-    public function show(AntenAddmissionFollowUp $antenAddmissionFollowUp)
+    public function show( $id)
     {
         //
+        return AntenAddmissionFollowUp::find($id);
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\AntenAddmissionFollowUp  $antenAddmissionFollowUp
+     * @param  \App\Models\uSResponse  $uSResponse
      * @return \Illuminate\Http\Response
      */
-    public function edit(AntenAddmissionFollowUp $antenAddmissionFollowUp)
-    {
-        //
-    }
+   
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateAntenAddmissionFollowUpRequest  $request
-     * @param  \App\Models\AntenAddmissionFollowUp  $antenAddmissionFollowUp
+     * @param  \App\Http\Requests\UpdateuSResponseRequest  $request
+     * @param  \App\Models\uSResponse  $uSResponse
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAntenAddmissionFollowUpRequest $request, AntenAddmissionFollowUp $antenAddmissionFollowUp)
+    public function update(Request $request,  $id)
     {
         //
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\AntenAddmissionFollowUp  $antenAddmissionFollowUp
+     * @param  \App\Models\uSResponse  $uSResponse
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AntenAddmissionFollowUp $antenAddmissionFollowUp)
+    public function destroy(uSResponse $uSResponse)
     {
         //
     }
+
+    public function patientid($id)
+    {
+        
+        return AntenAddmissionFollowUp::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return AntenAddmissionFollowUp::where('file_id', '=' ,$id)->get();
+    }
+    
 }

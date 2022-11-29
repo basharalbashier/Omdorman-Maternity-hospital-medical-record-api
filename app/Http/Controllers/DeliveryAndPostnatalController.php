@@ -37,6 +37,8 @@ class DeliveryAndPostnatalController extends Controller
     public function store(StoreDeliveryAndPostnatalRequest $request)
     {
         //
+        return  DeliveryAndPostnatal::create($request->all());
+
     }
 
     /**
@@ -82,5 +84,18 @@ class DeliveryAndPostnatalController extends Controller
     public function destroy(DeliveryAndPostnatal $deliveryAndPostnatal)
     {
         //
+    }
+
+
+    public function patientid($id)
+    {
+        
+        return DeliveryAndPostnatal::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return DeliveryAndPostnatal::where('file_id', '=' ,$id)->get();
     }
 }

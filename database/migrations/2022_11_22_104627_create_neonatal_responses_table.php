@@ -13,22 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ante_follow_ups', function (Blueprint $table) {
+        Schema::create('neonatal_responses', function (Blueprint $table) {
             $table->id();
-            $table->string('bp');
-            $table->string('ga');
-            $table->string('fl');
-            $table->string('pres');
-            $table->string('eng');
-            $table->string('fh');
-            $table->string('hb');
-            $table->string('urine');
-            $table->string('comment')->nullable();
-            $table->string('next_visit');
+            $table->string('remrks')->nullable();
+            $table->text('comment')->nullable();
+            $table->string('request_id');
             $table->string('dr_id');
             $table->string('patient_id');
             $table->string('file_id');
-            $table->string('nurse_id');
             $table->timestamps();
         });
     }
@@ -40,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ante_follow_ups');
+        Schema::dropIfExists('neonatal_responses');
     }
 };

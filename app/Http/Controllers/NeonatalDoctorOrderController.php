@@ -1,0 +1,99 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests\StoreNeonatalDoctorOrderRequest;
+use App\Http\Requests\UpdateNeonatalDoctorOrderRequest;
+use App\Models\NeonatalDoctorOrder;
+use Illuminate\Http\Request;
+
+class NeonatalDoctorOrderController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \App\Http\Requests\StoreNeonatalDoctorOrderRequest  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        return NeonatalDoctorOrder::create($request->all());
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\NeonatalDoctorOrder  $neonatalDoctorOrder
+     * @return \Illuminate\Http\Response
+     */
+    public function show(NeonatalDoctorOrder $neonatalDoctorOrder)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\NeonatalDoctorOrder  $neonatalDoctorOrder
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(NeonatalDoctorOrder $neonatalDoctorOrder)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \App\Http\Requests\UpdateNeonatalDoctorOrderRequest  $request
+     * @param  \App\Models\NeonatalDoctorOrder  $neonatalDoctorOrder
+     * @return \Illuminate\Http\Response
+     */
+    public function update(UpdateNeonatalDoctorOrderRequest $request, NeonatalDoctorOrder $neonatalDoctorOrder)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\NeonatalDoctorOrder  $neonatalDoctorOrder
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(NeonatalDoctorOrder $neonatalDoctorOrder)
+    {
+        //
+    }
+
+    public function patientid($id)
+    {
+        
+        return NeonatalDoctorOrder::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return NeonatalDoctorOrder::where('file_id', '=' ,$id)->get();
+    }
+}

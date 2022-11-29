@@ -85,4 +85,16 @@ class LabourWardInstController extends Controller
     {
         //
     }
+
+    public function patientid($id)
+    {
+        
+        return LabourWardInst::where('patient_id', '=' ,$id)->get();
+    }
+
+    public function fileid($id)
+    {
+        
+        return LabourWardInst::where('file_id', '=' ,$id)->get();
+    }
 }

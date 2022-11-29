@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AnteFollowUp extends Model
+class AntFollowUp extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'bp',
         'ga',
@@ -22,5 +23,7 @@ class AnteFollowUp extends Model
         'dr_id',
         'patient_id',
         'file_id'
+        
     ];
+    
 }
