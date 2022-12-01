@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreuSResponseRequest;
 use App\Http\Requests\UpdateuSResponseRequest;
+use App\Models\uSRequest;
 use App\Models\uSResponse;
-
+use App\Policies\USRequestPolicy;
 
 class USResponseController extends Controller
 {
@@ -40,7 +42,20 @@ class USResponseController extends Controller
     {
         //
 
-        return uSResponse::create($request->all());
+        $updateRequest = uSRequest::find($request['request_id']);
+
+
+        // Make sure you've got the Page model
+        if ($updateRequest) {
+            $updateRequest['status'] = '2';
+            $updateRequest->save();
+
+
+            return uSResponse::create($request->all());
+        }else{
+
+            return "no";
+        }
 
     }
 
@@ -50,11 +65,10 @@ class USResponseController extends Controller
      * @param  \App\Models\uSResponse  $uSResponse
      * @return \Illuminate\Http\Response
      */
-    public function show( $id)
+    public function show($id)
     {
         //
         return uSResponse::find($id);
-
     }
 
     /**
@@ -96,21 +110,19 @@ class USResponseController extends Controller
 
     public function patientid($id)
     {
-        
-        return uSResponse::where('patient_id', '=' ,$id)->get();
+
+        return uSResponse::where('patient_id', '=', $id)->get();
     }
 
     public function fileid($id)
     {
-        
-        return uSResponse::where('file_id', '=' ,$id)->get();
+
+        return uSResponse::where('file_id', '=', $id)->get();
     }
 
     public function requestid($id)
     {
-        
-        return uSResponse::where('request_id', '=' ,$id)->get();
+
+        return uSResponse::where('request_id', '=', $id)->get();
     }
 }
-
-

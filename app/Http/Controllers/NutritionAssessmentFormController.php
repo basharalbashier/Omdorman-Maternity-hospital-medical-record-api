@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreNutritionAssessmentFormRequest;
 use App\Http\Requests\UpdateNutritionAssessmentFormRequest;
 use App\Models\NutritionAssessmentForm;
+use Illuminate\Http\Request;
 
 class NutritionAssessmentFormController extends Controller
 {
@@ -35,7 +36,7 @@ class NutritionAssessmentFormController extends Controller
      * @param  \App\Http\Requests\StoreNutritionAssessmentFormRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreNutritionAssessmentFormRequest $request)
+    public function store(Request $request)
     {
         return NutritionAssessmentForm::create($request->all());
         //

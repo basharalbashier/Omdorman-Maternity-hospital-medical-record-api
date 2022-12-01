@@ -82,6 +82,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::post('/user/login',[UserController::class,'login']);
  Route::post('/user/donat',[UserController::class,'store']);
+ Route::post('/nutr/add',[NutritionAssessmentFormController::class,'store']);
 
 ////////
 // Route::group(['middleware'=>['auth:sanctum']],function(){
@@ -121,7 +122,7 @@ Route::get('/us',[USRequestController::class,'index']);
     Route::post('/newborn/add',[NewBornFirstDayExaminationController::class,'store']);
     Route::post('/nurseobserv/add',[NurseObservationNoteController::class,'store']);
     Route::post('/nurseprog/add',[NurseProgressNoteController::class,'store']);
-    Route::post('/nutr/add',[NutritionAssessmentFormController::class,'store']);
+    // Route::post('/nutr/add',[NutritionAssessmentFormController::class,'store']);
     Route::post('/obs/add',[ObstHisoryController::class,'store']);
     Route::post('/operation/add',[OperationNotesController::class,'store']);
     Route::post('/recordatt/add',[RecordOfAttendanceAtTheTimeOfDeliveryController::class,'store']);

@@ -19,7 +19,9 @@ return new class extends Migration
             $table->string('date_birth');
             $table->string('person_in_charg');
             $table->string('ident');
-            $table->string('ident_image');
+            $table->string('phone');
+            $table->string('patient_id')->nullable();
+            $table->string('file_id')->nullable();
             $table->string('user_id');
             $table->timestamps();
         });

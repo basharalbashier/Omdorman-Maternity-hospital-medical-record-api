@@ -24,11 +24,11 @@ return new class extends Migration
             $table->string('hc_week')->nullable();
             $table->string('fl')->nullable();
             $table->string('fl_week')->nullable();
-            $table->string('ac');
-            $table->string('ac_week');
-            $table->string('crl');
-            $table->string('crl_week');
-            $table->string('efw');
+            $table->string('ac')->nullable();
+            $table->string('ac_week')->nullable();
+            $table->string('crl')->nullable();
+            $table->string('crl_week')->nullable();
+            $table->string('efw')->nullable();
             $table->string('uss_edd')->nullable();
             $table->string('placental_site')->nullable();
             $table->string('placental_site_comm')->nullable();
