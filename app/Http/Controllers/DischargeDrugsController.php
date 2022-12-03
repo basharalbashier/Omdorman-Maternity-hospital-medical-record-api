@@ -36,7 +36,10 @@ class DischargeDrugsController extends Controller
      */
     public function store(StoreDischargeDrugsRequest $request)
     {
-        //
+        $request->validate([
+
+            'drug'=>'required'
+        ]);
         return  DischargeDrugs::create($request->all());
 
     }

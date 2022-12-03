@@ -9,25 +9,24 @@ class NurseObservationNote extends Model
 {
     use HasFactory;
 
-    protected $fillabe =[
+    protected $fillable =[
     
 
         'temp',
         'puls_rate',
         'resp_rate',
-        'bp',
+        'b_p',
         'urine_output_n',
         'urine_output_d',
-        'level_of_conaciouances_muscle_tone_and_reflex',
+        'level_of_conaciouances',
         'o_two',
         'odema_general',
         'odema_ll',
-        'urine_acente',
+        'urine_acetone',
         'urine_sugar',
         'urine_protein',
         'skin_color',
         'remarks',
-
         'nurse_id',
         'patient_id',
         'file_id',

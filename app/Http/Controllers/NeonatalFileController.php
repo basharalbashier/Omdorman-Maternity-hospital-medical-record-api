@@ -16,7 +16,7 @@ class NeonatalFileController extends Controller
      */
     public function index()
     {
-        //
+        return NeonatalFile::all();
     }
 
     /**

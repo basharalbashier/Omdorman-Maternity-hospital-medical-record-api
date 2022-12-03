@@ -6,6 +6,7 @@ use App\Http\Requests\StoreAntFollowUpRequest;
 use App\Http\Requests\UpdateAntFollowUpRequest;
 use App\Models\AntFollowUp;
 use Illuminate\Http\Client\Request;
+use Illuminate\Http\Request as HttpRequest;
 
 class AntFollowUpController extends Controller
 {
@@ -35,7 +36,7 @@ class AntFollowUpController extends Controller
      * @param  \App\Http\Requests\StoreAntFollowUpRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(HttpRequest $request)
     {
         //
         return  AntFollowUp::create($request->all());

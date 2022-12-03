@@ -9,7 +9,7 @@ class TreatmentOrderSheet extends Model
 {
     use HasFactory;
 
-    protected $fillabel=[
+    protected $fillable=[
      
 
 
@@ -19,5 +19,6 @@ class TreatmentOrderSheet extends Model
 
         'patient_id',
         'file_id',
+        'dr_id',
     ];
 }

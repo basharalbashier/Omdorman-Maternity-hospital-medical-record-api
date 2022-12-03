@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('dr_id');
             $table->string('patient_id');
             $table->string('file_id');
-            $table->string('nurse_id');
             $table->timestamps();
         });
     }

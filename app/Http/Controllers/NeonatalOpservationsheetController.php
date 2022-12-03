@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreNeonatalOpservationsheetRequest;
 use App\Http\Requests\UpdateNeonatalOpservationsheetRequest;
 use App\Models\NeonatalOpservationsheet;
+use Illuminate\Http\Request;
 
 class NeonatalOpservationsheetController extends Controller
 {
@@ -34,7 +35,7 @@ class NeonatalOpservationsheetController extends Controller
      * @param  \App\Http\Requests\StoreNeonatalOpservationsheetRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreNeonatalOpservationsheetRequest $request)
+    public function store(Request $request)
     {
         return NeonatalOpservationsheet::create($request->all());
     }

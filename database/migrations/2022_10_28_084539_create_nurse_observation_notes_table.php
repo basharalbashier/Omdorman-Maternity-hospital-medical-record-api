@@ -30,7 +30,6 @@ return new class extends Migration
             $table->string('urine_protein')->nullable();
             $table->string('skin_color')->nullable();
             $table->text('remarks')->nullable();
-
             $table->string('patient_id');
             $table->string('file_id');
             $table->string('nurse_id');

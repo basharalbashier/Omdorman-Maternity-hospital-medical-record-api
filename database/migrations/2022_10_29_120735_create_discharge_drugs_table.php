@@ -15,11 +15,17 @@ return new class extends Migration
     {
         Schema::create('discharge_drugs', function (Blueprint $table) {
             $table->id();
+            $table->string('drug');
+            $table->string('dose');
+            $table->text('route');
+            $table->text('frequency');
+            $table->text('no_of_dose');
+            $table->text('remarks');
 
             $table->string('dr_id');
             $table->string('patient_id');
             $table->string('file_id');
-            $table->string('nurse_id');
+
             $table->timestamps();
         });
     }

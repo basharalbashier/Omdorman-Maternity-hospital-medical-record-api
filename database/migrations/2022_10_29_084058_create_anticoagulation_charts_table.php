@@ -15,11 +15,17 @@ return new class extends Migration
     {
         Schema::create('anticoagulation_charts', function (Blueprint $table) {
             $table->id();
+            $table->string('day');
+            $table->string('tick_for_inr');
+            $table->string('inr');
+            $table->string('aptt');
+            $table->string('apt');
+            $table->text('dosage_of_warfrin');
 
             $table->string('dr_id');
             $table->string('patient_id');
             $table->string('file_id');
-            $table->string('nurse_id');
+
             $table->timestamps();
         });
     }

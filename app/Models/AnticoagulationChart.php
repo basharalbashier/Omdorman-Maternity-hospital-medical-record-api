@@ -9,14 +9,14 @@ class AnticoagulationChart extends Model
 {
     use HasFactory;
 
-    protected $fillabe=[
+    protected $fillable=[
 
         'day',
         'tick_for_inr',
         'inr',
         'aptt',
         'apt',
-        'dosage_of_warfarin',
+        'dosage_of_warfrin',
         'nurse_id',
         'dr_id',
         'patient_id',

@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('file_id')->nullable();
             $table->string('user_id');
             $table->timestamps();
+            
         });
     }
 

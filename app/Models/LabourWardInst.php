@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class LabourWardInst extends Model
 {
     use HasFactory;
-    protected $fillabe=[
+    protected $fillable=[
         'instructions',
         'patient_id',
         'dr_id',
+        'file_id',
     ];
 }

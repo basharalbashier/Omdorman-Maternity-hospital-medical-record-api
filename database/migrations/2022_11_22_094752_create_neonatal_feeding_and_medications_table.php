@@ -16,10 +16,9 @@ return new class extends Migration
         Schema::create('neonatal_feeding_and_medications', function (Blueprint $table) {
             $table->id();
             $table->text('feeding')->nullable();
+            $table->text('residual')->nullable();
             $table->text('fluid')->nullable();
             $table->text('medication')->nullable();
-
-
             $table->string('dr_id');
             $table->string('mother_id');
             $table->string('file_id');

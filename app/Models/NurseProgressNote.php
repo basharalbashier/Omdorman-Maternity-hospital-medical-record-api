@@ -10,7 +10,7 @@ class NurseProgressNote extends Model
     use HasFactory;
 
 
-    protected $fillabe =[
+    protected $fillable =[
     
 
         'temp',
@@ -19,11 +19,11 @@ class NurseProgressNote extends Model
         'bp',
         'urine_output_n',
         'urine_output_d',
-        'level_of_conaciouances_muscle_tone_and_reflex',
+        'level_of_conaciouances',
         'o_two',
         'odema_general',
         'odema_ll',
-        'urine_acente',
+        'urine_acetone',
         'urine_sugar',
         'urine_protein',
         'skin_color',

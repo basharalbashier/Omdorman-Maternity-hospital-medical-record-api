@@ -9,7 +9,7 @@ class AntenAddmissionFollowUp extends Model
 {
     use HasFactory;
 
-    protected $fillabe=[
+    protected $fillable=[
       
         'follow_instr',
         'patient_id',

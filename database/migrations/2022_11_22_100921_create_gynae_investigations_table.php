@@ -18,7 +18,6 @@ return new class extends Migration
 
             $table->text('investigation')->nullable();
             $table->text('result')->nullable();
-
             $table->string('dr_id');
             $table->string('patient_id');
             $table->string('file_id');

@@ -15,10 +15,13 @@ return new class extends Migration
     {
         Schema::create('treatment_order_sheets', function (Blueprint $table) {
             $table->id();
+            $table->string('start_date');
+            $table->string('end_date');
+            $table->string('treatment');
             $table->string('dr_id');
             $table->string('patient_id');
             $table->string('file_id');
-            $table->string('nurse_id');
+
             $table->timestamps();
         });
     }

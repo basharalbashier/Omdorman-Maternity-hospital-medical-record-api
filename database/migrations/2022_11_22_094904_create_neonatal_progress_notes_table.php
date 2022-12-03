@@ -16,8 +16,6 @@ return new class extends Migration
         Schema::create('neonatal_progress_notes', function (Blueprint $table) {
             $table->id();
             $table->text('progress')->nullable();
-
-
             $table->string('dr_id');
             $table->string('mother_id');
             $table->string('file_id');

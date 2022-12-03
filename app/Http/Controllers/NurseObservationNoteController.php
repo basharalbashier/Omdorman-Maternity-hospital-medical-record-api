@@ -39,7 +39,7 @@ class NurseObservationNoteController extends Controller
     public function store(StoreNurseObservationNoteRequest $request)
     {
         //
-        return NurseProgressNote::create($request->all());
+        return NurseObservationNote::create($request->all());
     }
 
     /**

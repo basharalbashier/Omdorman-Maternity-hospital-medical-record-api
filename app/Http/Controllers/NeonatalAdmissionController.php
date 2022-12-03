@@ -37,7 +37,11 @@ class NeonatalAdmissionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $request->validate([
+            "dr_id"=>'required',
+            "file_"=>"required"
+        ]);
         return NeonatalAdmission::create($request->all());
     }
 

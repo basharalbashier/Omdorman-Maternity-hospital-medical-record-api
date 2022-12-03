@@ -15,11 +15,10 @@ return new class extends Migration
     {
         Schema::create('anten_addmission_follow_ups', function (Blueprint $table) {
             $table->id();
-
+            $table->text('follow_instr');
             $table->string('dr_id');
             $table->string('patient_id');
             $table->string('file_id');
-            $table->string('nurse_id');
             $table->timestamps();
         });
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreHouseOffInPatientFollowUpRequest;
 use App\Http\Requests\UpdateHouseOffInPatientFollowUpRequest;
 use App\Models\HouseOffInPatientFollowUp;
+use Illuminate\Http\Request;
 
 class HouseOffInPatientFollowUpController extends Controller
 {
@@ -35,7 +36,7 @@ class HouseOffInPatientFollowUpController extends Controller
      * @param  \App\Http\Requests\StoreHouseOffInPatientFollowUpRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreHouseOffInPatientFollowUpRequest $request)
+    public function store(Request $request)
     {
         //
         return HouseOffInPatientFollowUp::create($request->all());

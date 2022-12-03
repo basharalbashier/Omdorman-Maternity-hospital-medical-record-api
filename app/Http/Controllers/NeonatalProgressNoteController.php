@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreNeonatalProgressNoteRequest;
 use App\Http\Requests\UpdateNeonatalProgressNoteRequest;
 use App\Models\NeonatalProgressNote;
+use Illuminate\Http\Request;
 
 class NeonatalProgressNoteController extends Controller
 {
@@ -34,7 +35,7 @@ class NeonatalProgressNoteController extends Controller
      * @param  \App\Http\Requests\StoreNeonatalProgressNoteRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreNeonatalProgressNoteRequest $request)
+    public function store(Request $request)
     {
         return NeonatalProgressNote::create($request->all());
     }

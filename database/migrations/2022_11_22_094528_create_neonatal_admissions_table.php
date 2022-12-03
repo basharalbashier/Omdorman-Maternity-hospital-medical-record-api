@@ -36,6 +36,7 @@ return new class extends Migration
             $table->text('other')->nullable();
             $table->text('admis_dia')->nullable();
             $table->string('dr_id');
+            $table->string('file_id');
             $table->string('mother_id');
             $table->timestamps();
         });

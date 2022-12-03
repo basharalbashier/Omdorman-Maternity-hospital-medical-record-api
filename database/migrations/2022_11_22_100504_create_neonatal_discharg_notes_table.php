@@ -33,9 +33,7 @@ return new class extends Migration
             $table->text('referals')->nullable();
             $table->string('dm')->nullable();
 
-            $table->string('others')->nullable();
-            $table->text('others_text')->nullable();
-            $table->text('previous_operation')->nullable();
+
 
 
             $table->string('dr_id');
