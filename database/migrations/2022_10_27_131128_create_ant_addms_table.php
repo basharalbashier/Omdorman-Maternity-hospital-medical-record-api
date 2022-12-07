@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('bp');
             $table->string('temp');
             $table->text('general_condition');
+            $table->text('general_condition_list');
             $table->string('cvs_chest_examination');
             $table->string('fundel_height');
             $table->string('lie');
@@ -34,7 +35,6 @@ return new class extends Migration
             $table->string('dr_id');
             $table->string('patient_id');
             $table->string('file_id');
-            $table->string('nurse_id');
             $table->timestamps();
         });
     }

@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('lenght')->nullable();
 
             $table->string('ofc')->nullable();
-            $table->string('gestation')->nullable();         
+            $table->string('gestation')->nullable();
             $table->string('dates')->nullable();
             $table->string('us')->nullable();
             $table->text('assesment')->nullable();

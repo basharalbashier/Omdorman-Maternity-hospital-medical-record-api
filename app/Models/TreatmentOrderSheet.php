@@ -11,12 +11,9 @@ class TreatmentOrderSheet extends Model
 
     protected $fillable=[
      
-
-
         'treatment',
         'start_date',
         'end_date',
-
         'patient_id',
         'file_id',
         'dr_id',

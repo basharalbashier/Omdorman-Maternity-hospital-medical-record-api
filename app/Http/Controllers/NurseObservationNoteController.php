@@ -90,12 +90,12 @@ class NurseObservationNoteController extends Controller
     public function patientid($id)
     {
         
-        return NurseProgressNote::where('patient_id', '=' ,$id)->get();
+        return NurseObservationNote::where('patient_id', '=' ,$id)->get();
     }
 
     public function fileid($id)
     {
         
-        return NurseProgressNote::where('file_id', '=' ,$id)->get();
+        return NurseObservationNote::where('file_id', '=' ,$id)->get();
     }
 }

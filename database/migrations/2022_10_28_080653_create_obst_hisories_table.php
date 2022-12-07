@@ -15,20 +15,10 @@ return new class extends Migration
     {
         Schema::create('obst_hisories', function (Blueprint $table) {
             $table->id();
-            $table->string('unit');
             $table->string('gr');
             $table->string('para');
 
-            $table->string('one');
-            $table->string('two');
-            $table->string('three');
-            $table->string('four');
-            $table->string('five');
-            $table->string('six');
-            $table->string('seven');
-            $table->string('eight');
-            $table->string('nine');
-            $table->string('ten');
+            $table->text('comment');
 
             $table->string('lmp');
             $table->string('edd');
@@ -44,7 +34,6 @@ return new class extends Migration
             $table->string('multiple_pregnancy');
             $table->text('others');
 
-  
             $table->text('chest_cvs_exam')->nullable();
             $table->text('diagnosis')->nullable();
             $table->text('comments_and_social_plans')->nullable();

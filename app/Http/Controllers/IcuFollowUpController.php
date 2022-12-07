@@ -35,7 +35,7 @@ class IcuFollowUpController extends Controller
      * @param  \App\Http\Requests\StoreIcuFollowUpRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreIcuFollowUpRequest $request)
     {
         //
         return IcuFollowUp::create($request->all());
