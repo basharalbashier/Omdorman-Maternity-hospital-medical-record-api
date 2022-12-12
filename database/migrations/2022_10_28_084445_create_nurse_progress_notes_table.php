@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('nurse_progress_notes', function (Blueprint $table) {
             $table->id();
-            $table->string('dr_id');
+            $table->text('status')->nullable();
+            $table->text('patient_condition')->nullable();
+            $table->text('remarks')->nullable();
             $table->string('patient_id');
             $table->string('file_id');
             $table->string('nurse_id');

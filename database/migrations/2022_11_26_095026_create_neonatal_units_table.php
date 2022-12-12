@@ -57,11 +57,17 @@ return new class extends Migration
             $table->string('tone')->nullable();
             $table->string('vitamin_k_given')->nullable();
             $table->string('res_necess')->nullable();
+            $table->string('spontaneous')->nullable();
+            $table->string('movement_when_stimulated')->nullable();
+            $table->string('pale')->nullable();
+            $table->string('limb')->nullable();
+            $table->string('apgar')->nullable();
             $table->string('heart')->nullable();
             $table->string('respiration')->nullable();
             $table->string('tone_2')->nullable();
             $table->string('responsiveness')->nullable();
             $table->string('color_2')->nullable();
+            $table->string('total')->nullable();
             $table->string('exam_by')->nullable();
             $table->string('general')->nullable();
             $table->string('skull')->nullable();
@@ -89,12 +95,11 @@ return new class extends Migration
             $table->string('hips')->nullable();
             $table->string('gestational_assess')->nullable();
             $table->string('nutri')->nullable();
-             $table->string('another_heart')->nullable();
-            $table->string('head_circum')->nullable();
-            $table->string('mother_feeding')->nullable();
+            $table->string('another_heart')->nullable();
+            
+            $table->string('head_cir')->nullable();
+            $table->string('feeding')->nullable();
             $table->text('comment')->nullable();
-  
-
             $table->string('dr_id');
             $table->string('mother_id');
             $table->string('file_id');

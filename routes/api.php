@@ -208,9 +208,6 @@ Route::get('/us',[USRequestController::class,'index']);
     Route::get('/usresponse/fileid/{fileid}',[USResponseController::class,'fileid']);
     Route::get('/usresponse/request_id',[USResponseController::class,'requestid']);
     Route::get('/vagin/{fileid}',[USResponseController::class,'fileid']);
-
-    
-
     //new routes
     Route::post('/gyn/add',[GynaeFileController::class,'store']);
     Route::post('/gynadm/add',[GynaeAdmissionController::class,'store']);
@@ -228,13 +225,11 @@ Route::get('/us',[USRequestController::class,'index']);
     Route::post('/gynpost/add',[GynaePostOperativeFollowUpController::class,'store']);
     Route::post('/gynpostinst/add',[GynaePostOperativeInstructionController::class,'store']);
     Route::post('/gynpre/add',[GynaePreOpCheckListController::class,'store']);
-
     Route::post('/icuad/add',[IcuAdmissionController::class,'store']);
     Route::post('/icufinal/add',[IcuFinalOutComeController::class,'store']);
     Route::post('/icufollow/add',[IcuFollowUpController::class,'store']);
     Route::post('/icureq/add',[IcuRequestController::class,'store']);
     Route::post('/icuresp/add',[IcuResponseController::class,'store']);
-    
     Route::post('/neo/add',[NeonatalAdmissionController::class,'store']);
     Route::post('/neodis/add',[NeonatalDischargNoteController::class,'store']);
     Route::post('/neodoctor/add',[NeonatalDoctorOrderController::class,'store']);
@@ -248,6 +243,7 @@ Route::get('/us',[USRequestController::class,'index']);
     Route::post('/neorequ/add',[NeonatalRequestController::class,'store']);
     Route::post('/neoresp/add',[NeonatalResponseController::class,'store']);
     Route::post('/neounit/add',[NeonatalUnitController::class,'store']);
+    Route::get('/neounit',[NeonatalUnitController::class,'index']);
 
     ///
 
@@ -272,7 +268,6 @@ Route::get('/us',[USRequestController::class,'index']);
     Route::post('/icufollow/{patientid}',[IcuFollowUpController::class,'patientid']);
     Route::post('/icureq/{patientid}',[IcuRequestController::class,'patientid']);
     Route::post('/icuresp/{patientid}',[IcuResponseController::class,'patientid']);
-
     Route::post('/neo/{patientid}',[NeonatalAdmissionController::class,'patientid']);
     Route::post('/neodis/{patientid}',[NeonatalDischargNoteController::class,'patientid']);
     Route::post('/neodoctor/{patientid}',[NeonatalDoctorOrderController::class,'patientid']);
@@ -289,25 +284,25 @@ Route::get('/us',[USRequestController::class,'index']);
     ///
     Route::get('/gyn/{unit}',[PatientFileController::class,'unit']);
     Route::get('/gyn/fileid/{fileid}',[GynaeAdmissionController::class,'fileid']);
-    Route::post('/gynanae/{fileid}',[GynaeAnaesthesiaListController::class,'fileid']);
-    Route::post('/gynanaerecord/{fileid}',[GynaeAnaesthesiaRecordController::class,'fileid']);
-    Route::post('/gynclinicdis/{fileid}',[GynaeClinicalDischargeSummaryController::class,'fileid']);
-    Route::post('/gynclincexam/{fileid}',[GynaeClinicalExamController::class,'fileid']);
-    Route::post('/gyncomment/{fileid}',[GynaeCommentController::class,'fileid']);
-    Route::post('/gyndrug/{fileid}',[GynaeDugAndDoseController::class,'fileid']);
-    Route::post('/gynfile/{fileid}',[GynaeFileController::class,'fileid']);
-    Route::post('/gyninstr/{fileid}',[GynaeInstructionController::class,'fileid']);
-    Route::post('/gyninv/{fileid}',[GynaeInvestigationController::class,'fileid']);
+    Route::get('/gynanae/{fileid}',[GynaeAnaesthesiaListController::class,'fileid']);
+    Route::get('/gynanaerecord/fileid/{fileid}',[GynaeAnaesthesiaRecordController::class,'fileid']);
+    Route::get('/gynclinicdis/fileid/{fileid}',[GynaeClinicalDischargeSummaryController::class,'fileid']);
+    Route::get('/gynclincexam/fileid/{fileid}',[GynaeClinicalExamController::class,'fileid']);
+    Route::get('/gyncomment/fileid/{fileid}',[GynaeCommentController::class,'fileid']);
+    Route::get('/gyndrug/fileid/{fileid}',[GynaeDugAndDoseController::class,'fileid']);
+    Route::get('/gynfile/fileid/{fileid}',[GynaeFileController::class,'fileid']);
+    Route::get('/gyninstr/fileid/{fileid}',[GynaeInstructionController::class,'fileid']);
+    Route::get('/gyninv/fileid/{fileid}',[GynaeInvestigationController::class,'fileid']);
     Route::post('/gynobse/{fileid}',[GynaeObservationSheetController::class,'fileid']);
-    Route::post('/gynoper/{fileid}',[GynaeOperationSheetController::class,'fileid']);
-    Route::post('/gynpost/{fileid}',[GynaePostOperativeFollowUpController::class,'fileid']);
-    Route::post('/gynpostinst/{fileid}',[GynaePostOperativeInstructionController::class,'fileid']);
-    Route::post('/gynpre/{fileid}',[GynaePreOpCheckListController::class,'fileid']);
-    Route::post('/icu/{fileid}',[IcuAdmissionController::class,'fileid']);
-    Route::post('/icufinal/{fileid}',[IcuFinalOutComeController::class,'fileid']);
-    Route::post('/icufollow/{fileid}',[IcuFollowUpController::class,'fileid']);
-    Route::post('/icureq/{fileid}',[IcuRequestController::class,'fileid']);
-    Route::post('/icuresp/{fileid}',[IcuResponseController::class,'fileid']);
+    Route::get('/gynoper/{fileid}',[GynaeOperationSheetController::class,'fileid']);
+    Route::get('/gynpost/fileid/{fileid}',[GynaePostOperativeFollowUpController::class,'fileid']);
+    Route::get('/gynpostinst/fileid/{fileid}',[GynaePostOperativeInstructionController::class,'fileid']);
+    Route::get('/gynpre/fileid/{fileid}',[GynaePreOpCheckListController::class,'fileid']);
+    Route::get('/icu/{fileid}',[IcuAdmissionController::class,'fileid']);
+    Route::get('/icufinal/{fileid}',[IcuFinalOutComeController::class,'fileid']);
+    Route::get('/icufollow/{fileid}',[IcuFollowUpController::class,'fileid']);
+    Route::get('/icureq/{fileid}',[IcuRequestController::class,'fileid']);
+    Route::get('/icuresp/{fileid}',[IcuResponseController::class,'fileid']);
 
     Route::get('/neo/f/{fileid}',[NeonatalAdmissionController::class,'fileid']);
     Route::get('/neodis/f/{fileid}',[NeonatalDischargNoteController::class,'fileid']);

@@ -13,15 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('regular_drugs', function (Blueprint $table) {
+        Schema::create('icu_nurse_notes', function (Blueprint $table) {
             $table->id();
-            $table->text('drug')->nullable();
-            $table->text('dos')->nullable();
-            $table->text('route')->nullable();
-            $table->text('freq')->nullable();
-            $table->string('dr_id');
-            $table->string('patient_id');
-            $table->string('file_id');
             $table->timestamps();
         });
     }
@@ -33,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('regular_drugs');
+        Schema::dropIfExists('icu_nurse_notes');
     }
 };

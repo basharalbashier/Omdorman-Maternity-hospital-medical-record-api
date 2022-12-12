@@ -35,7 +35,6 @@ return new class extends Migration
             $table->text('others');
 
             $table->text('chest_cvs_exam')->nullable();
-            $table->text('diagnosis')->nullable();
             $table->text('comments_and_social_plans')->nullable();
             $table->string('dr_id');
             $table->string('patient_id');

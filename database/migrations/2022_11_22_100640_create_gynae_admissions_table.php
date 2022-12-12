@@ -38,8 +38,6 @@ return new class extends Migration
             $table->text('others_text')->nullable();
             $table->text('previous_operation')->nullable();
             $table->text('medication')->nullable();
-
-
             $table->string('dr_id');
             $table->string('patient_id');
             $table->string('file_id');

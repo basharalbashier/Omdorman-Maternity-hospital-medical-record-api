@@ -17,6 +17,7 @@ class NeonatalUnitController extends Controller
     public function index()
     {
         //
+        return NeonatalUnit::all();
     }
 
     /**
@@ -35,7 +36,7 @@ class NeonatalUnitController extends Controller
      * @param  \App\Http\Requests\StoreNeonatalUnitRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreNeonatalUnitRequest $request)
     {
         return NeonatalUnit::create($request->all());
     }
