@@ -13,16 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('icu_requests', function (Blueprint $table) {
+        Schema::create('after_aneaths', function (Blueprint $table) {
             $table->id();
-            $table->string('remaks');
-            $table->text('comment')->nullable();
-            $table->text('status')->nullable();
-            $table->string('type');
-            $table->string('unit');
-            $table->string('dr_id');
-            $table->string('patient_id');
-            $table->string('file_id');
             $table->timestamps();
         });
     }
@@ -34,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('icu_requests');
+        Schema::dropIfExists('after_aneaths');
     }
 };

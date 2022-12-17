@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreIcuAdmissionRequest;
 use App\Http\Requests\UpdateIcuAdmissionRequest;
 use App\Models\IcuAdmission;
+use App\Models\IcuRequest;
 use Illuminate\Http\Request;
 
 class IcuAdmissionController extends Controller
@@ -16,7 +17,7 @@ class IcuAdmissionController extends Controller
      */
     public function index()
     {
-        //
+        return IcuAdmission::all();
     }
 
     /**
@@ -35,10 +36,15 @@ class IcuAdmissionController extends Controller
      * @param  \App\Http\Requests\StoreIcuAdmissionRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
         //
+        $updateStatus=IcuRequest::where('id', $id)->update(array('status' => '1'));
+      if($updateStatus){
         return IcuAdmission::create($request->all());
+      }else{
+        return "Could not update status";
+      }
     }
 
     /**

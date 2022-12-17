@@ -61,7 +61,7 @@ class PatientController extends Controller
 
     public function find($id){
 
-        return patient::find($id);
+        return [patient::find($id)];
     }
 
     /**

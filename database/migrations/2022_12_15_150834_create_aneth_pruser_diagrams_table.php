@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('icu_requests', function (Blueprint $table) {
+        Schema::create('aneth_pruser_diagrams', function (Blueprint $table) {
             $table->id();
-            $table->string('remaks');
-            $table->text('comment')->nullable();
-            $table->text('status')->nullable();
-            $table->string('type');
-            $table->string('unit');
+            $table->string('prus');
             $table->string('dr_id');
             $table->string('patient_id');
             $table->string('file_id');
@@ -34,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('icu_requests');
+        Schema::dropIfExists('aneth_pruser_diagrams');
     }
 };

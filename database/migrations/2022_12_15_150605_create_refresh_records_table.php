@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('icu_requests', function (Blueprint $table) {
+        Schema::create('refresh_records', function (Blueprint $table) {
             $table->id();
-            $table->string('remaks');
-            $table->text('comment')->nullable();
-            $table->text('status')->nullable();
-            $table->string('type');
-            $table->string('unit');
+            $table->string('prus')->nullable();
+            $table->string('puls')->nullable();
+            $table->string('breath')->nullable();
+            $table->string('medic')->nullable();
+            $table->string('fluid')->nullable();
+            $table->text('note')->nullable();
             $table->string('dr_id');
             $table->string('patient_id');
             $table->string('file_id');
@@ -34,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('icu_requests');
+        Schema::dropIfExists('refresh_records');
     }
 };

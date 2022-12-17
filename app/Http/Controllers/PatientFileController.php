@@ -105,6 +105,12 @@ class PatientFileController extends Controller
         return PatientFile::where('unit', '=' ,$id)->get();
     }
 
+        public function file_id($id)
+    {
+        
+        return PatientFile::where('id', '=' ,$id)->get();
+    }
+
 }
 
 

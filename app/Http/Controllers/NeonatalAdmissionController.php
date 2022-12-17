@@ -40,7 +40,7 @@ class NeonatalAdmissionController extends Controller
         
         $request->validate([
             "dr_id"=>'required',
-            "file_"=>"required"
+            "file_id"=>"required"
         ]);
         return NeonatalAdmission::create($request->all());
     }
