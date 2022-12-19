@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\AfterAneathController;
 use App\Http\Controllers\AntAddmController;
 use App\Http\Controllers\AntenAddmissionFollowUpController;
 use App\Http\Controllers\AntFollowUpController;
 use App\Http\Controllers\AnticoagulationChartController;
 use App\Http\Controllers\AsRequiredAndPostOperativeDrugeController;
+use App\Http\Controllers\BeforAneathController;
 use App\Http\Controllers\ClinicalDischargeSummaryController;
 use App\Http\Controllers\DeliveryAndPostnatalController;
 use App\Http\Controllers\DischargeDrugsController;
@@ -28,8 +30,11 @@ use App\Http\Controllers\HouseOffInPatientFollowUpController;
 use App\Http\Controllers\IcuAdmissionController;
 use App\Http\Controllers\IcuFinalOutComeController;
 use App\Http\Controllers\IcuFollowUpController;
+use App\Http\Controllers\IcuNurseNoteController;
 use App\Http\Controllers\IcuRequestController;
 use App\Http\Controllers\IcuResponseController;
+use App\Http\Controllers\IcuResusitionRecordController;
+use App\Http\Controllers\IcuVitalSignController;
 use App\Http\Controllers\InvestigationController;
 use App\Http\Controllers\InvestigationRequestFormController;
 use App\Http\Controllers\IVFluidController;
@@ -58,6 +63,7 @@ use App\Http\Controllers\ObstHisoryController;
 use App\Http\Controllers\OperationNotesController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\RecordOfAttendanceAtTheTimeOfDeliveryController;
+use App\Http\Controllers\RefreshRecordController;
 use App\Http\Controllers\RegularDrugController;
 use App\Http\Controllers\ReqularDrugsDosageController;
 use App\Http\Controllers\StatisticFormController;
@@ -66,6 +72,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\USRequestController;
 use App\Http\Controllers\USResponseController;
 use App\Http\Controllers\VaginalExamFindingController;
+use App\Http\Controllers\WhileAneathController;
 use App\Models\AnticoagulationChart;
 use App\Models\GynaeAdmission;
 use App\Models\GynaeFile;
@@ -89,7 +96,7 @@ Route::post('/user/donat', [UserController::class, 'store']);
 Route::post('/nutr/add', [NutritionAssessmentFormController::class, 'store']);
 
 ////////
-Route::group(['middleware'=>['auth:sanctum']],function(){
+// Route::group(['middleware'=>['auth:sanctum']],function(){
 
 Route::post('/user/logout', [UserController::class, 'logout']);
 Route::get('/user', [UserController::class, 'index']);
@@ -104,7 +111,6 @@ Route::get('/file/unit/{unit}', [PatientFileController::class, 'unit']);
 Route::get('/lab', [LabRequestFormController::class, 'index']);
 Route::get('/us', [USRequestController::class, 'index']);
 Route::get('/icu', [IcuAdmissionController::class, 'index']);
-
 ///////    
 Route::post('/patient/add', [PatientController::class, 'store']);
 Route::post('/antaddm/add', [AntAddmController::class, 'store']);
@@ -229,8 +235,11 @@ Route::post('/gynpre/add', [GynaePreOpCheckListController::class, 'store']);
 Route::post('/icuad/add/{id}', [IcuAdmissionController::class, 'store']);
 Route::post('/icufinal/add', [IcuFinalOutComeController::class, 'store']);
 Route::post('/icufollow/add', [IcuFollowUpController::class, 'store']);
+Route::post('/icunurse/add', [IcuNurseNoteController::class, 'store']);
 Route::post('/icureq/add', [IcuRequestController::class, 'store']);
 Route::post('/icuresp/add', [IcuResponseController::class, 'store']);
+Route::post('/icurescu/add', [IcuResusitionRecordController::class, 'store']);
+Route::post('/icuvital/add', [IcuVitalSignController::class, 'store']);
 Route::post('/neo/add', [NeonatalAdmissionController::class, 'store']);
 Route::post('/neodis/add', [NeonatalDischargNoteController::class, 'store']);
 Route::post('/neodoctor/add', [NeonatalDoctorOrderController::class, 'store']);
@@ -301,10 +310,12 @@ Route::get('/gynpostinst/fileid/{fileid}', [GynaePostOperativeInstructionControl
 Route::get('/gynpre/fileid/{fileid}', [GynaePreOpCheckListController::class, 'fileid']);
 Route::get('/icu/{fileid}', [IcuAdmissionController::class, 'fileid']);
 Route::get('/icufinal/{fileid}', [IcuFinalOutComeController::class, 'fileid']);
-Route::get('/icufollow/{fileid}', [IcuFollowUpController::class, 'fileid']);
+Route::get('/icufollow/f/{fileid}', [IcuFollowUpController::class, 'fileid']);
+Route::get('/icunurse/f/{fileid}', [IcuNurseNoteController::class, 'fileid']);
 Route::get('/icureq/{fileid}', [IcuRequestController::class, 'fileid']);
 Route::get('/icuresp/{fileid}', [IcuResponseController::class, 'fileid']);
-
+Route::get('/icurescu/f/{fileid}', [IcuResusitionRecordController::class, 'fileid']);
+Route::get('/icuvital/f/{fileid}', [IcuVitalSignController::class, 'fileid']);
 Route::get('/neo/f/{fileid}', [NeonatalAdmissionController::class, 'fileid']);
 Route::get('/neodis/f/{fileid}', [NeonatalDischargNoteController::class, 'fileid']);
 Route::get('/neodoctor/f/{fileid}', [NeonatalDoctorOrderController::class, 'fileid']);
@@ -329,7 +340,17 @@ Route::get('/icurf/{findbyrequest}', [IcuResponseController::class, 'findbyreque
 Route::get('/usrf/{findbyrequest}', [USResponseController::class, 'findbyrequest']);
 Route::get('/neorf/{findbyrequest}', [NeonatalResponseController::class, 'findbyrequest']);
 
-});
+Route::get('/beforana/f/{fileid}', [BeforAneathController::class, 'fileid']);
+Route::get('/whileana/f/{fileid}', [WhileAneathController::class, 'fileid']);
+Route::get('/afterana/f/{fileid}', [AfterAneathController::class, 'fileid']);
+Route::get('/refresh/f/{fileid}', [RefreshRecordController::class, 'fileid']);
+
+Route::post('/beforana/add', [BeforAneathController::class, 'store']);
+Route::post('/whileana/add', [WhileAneathController::class, 'store']);
+Route::post('/afterana/add', [AfterAneathController::class, 'store']);
+Route::post('/refresh/add', [RefreshRecordController::class, 'store']);
+
+// });
 
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

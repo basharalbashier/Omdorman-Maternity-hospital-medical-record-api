@@ -13,14 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('icu_nurse_notes', function (Blueprint $table) {
+        Schema::create('icu_vital_signs', function (Blueprint $table) {
             $table->id();
-            $table->text('note')->nullable();
+            $table->string('temp')->nullable();
+            $table->string('puls')->nullable();
+            $table->string('bp')->nullable();
+            $table->string('breath')->nullable();
+            $table->string('other')->nullable();
 
-            $table->string('nurse_id');
+            $table->text('comment')->nullable();
+            $table->string('dr_id');
             $table->string('patient_id');
             $table->string('file_id');
-            $table->string('type');
             $table->timestamps();
         });
     }
@@ -32,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('icu_nurse_notes');
+        Schema::dropIfExists('icu_vital_signs');
     }
 };

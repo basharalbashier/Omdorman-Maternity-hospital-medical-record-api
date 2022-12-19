@@ -18,11 +18,8 @@ return new class extends Migration
             $table->text('head')->nullable();
             $table->text('assistant')->nullable();
             $table->text('first_year')->nullable();
-
-            $table->text('Second_year')->nullable();
+            $table->text('second_year')->nullable();
             $table->text('room')->nullable();
-            $table->text('type')->nullable();
-            $table->text('type_of_surg')->nullable();
             $table->text('past_ill')->nullable();
             $table->text('curent_drugs')->nullable();
             $table->text('allerg')->nullable();
@@ -31,10 +28,11 @@ return new class extends Migration
             $table->text('bg')->nullable();
             $table->text('urin_bolina')->nullable();
             $table->text('blood_pruser')->nullable();
-
             $table->text('puls')->nullable();
-            $table->text('first_aid')->nullable();
-            $table->text('note')->nullable();
+            $table->text('another')->nullable();
+            $table->text('first_aid_one')->nullable();
+            $table->text('first_aid_two')->nullable();
+            $table->text('first_aid_three')->nullable();
 
 
             $table->string('dr_id');

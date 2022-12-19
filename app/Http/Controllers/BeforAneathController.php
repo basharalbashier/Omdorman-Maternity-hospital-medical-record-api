@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Database\Schema\Blueprint;
 use App\Http\Requests\StoreBeforAneathRequest;
 use App\Http\Requests\UpdateBeforAneathRequest;
 use App\Models\BeforAneath;
+use Illuminate\Support\Facades\Schema;
 
 class BeforAneathController extends Controller
 {
@@ -36,7 +37,10 @@ class BeforAneathController extends Controller
      */
     public function store(StoreBeforAneathRequest $request)
     {
-        //
+        //connection('sqlite')->
+
+        return BeforAneath::create($request->all());
+
     }
 
     /**
@@ -82,5 +86,11 @@ class BeforAneathController extends Controller
     public function destroy(BeforAneath $beforAneath)
     {
         //
+    }
+
+    public function fileid($id)
+    {
+        
+        return BeforAneath::where('file_id', '=' ,$id)->get();
     }
 }

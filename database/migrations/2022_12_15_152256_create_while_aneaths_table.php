@@ -15,15 +15,15 @@ return new class extends Migration
     {
         Schema::create('while_aneaths', function (Blueprint $table) {
             $table->id();
+
             $table->text('benth')->nullable();
             $table->text('iscolen')->nullable();
             $table->text('trobeen')->nullable();
-
             $table->text('baflyon')->nullable();
             $table->text('ox_nitroz')->nullable();
             $table->text('air_tube')->nullable();
             $table->text('hand_tube')->nullable();
-            $table->text('ear_tube')->nullable();
+            $table->text('nose_tube')->nullable();
             $table->text('halw')->nullable();
             $table->text('normal_breath')->nullable();
             $table->text('not_normal_breath')->nullable();
@@ -31,16 +31,15 @@ return new class extends Migration
             $table->text('machinaical_breath')->nullable();
             $table->text('without_soda')->nullable();
             $table->text('bro_atro')->nullable();
-
             $table->text('other_info')->nullable();
             $table->text('hard_visils')->nullable();
             $table->text('hard_sleep')->nullable();
-
             $table->text('hard_to_satel')->nullable();
             $table->text('another')->nullable();
             $table->text('investigations')->nullable();
             $table->text('another_medicin')->nullable();
-
+            $table->text('type')->nullable();
+            $table->text('type_ana')->nullable();
 
             $table->string('dr_id');
             $table->string('patient_id');

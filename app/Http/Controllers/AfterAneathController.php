@@ -36,6 +36,8 @@ class AfterAneathController extends Controller
      */
     public function store(StoreAfterAneathRequest $request)
     {
+        return AfterAneath::create($request->all());
+
         //
     }
 
@@ -82,5 +84,10 @@ class AfterAneathController extends Controller
     public function destroy(AfterAneath $afterAneath)
     {
         //
+    }
+    public function fileid($id)
+    {
+        
+        return AfterAneath::where('file_id', '=' ,$id)->get();
     }
 }

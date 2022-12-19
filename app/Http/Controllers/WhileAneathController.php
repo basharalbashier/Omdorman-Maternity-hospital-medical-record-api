@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Database\Schema\Blueprint;
 use App\Http\Requests\StoreWhileAneathRequest;
 use App\Http\Requests\UpdateWhileAneathRequest;
 use App\Models\WhileAneath;
+use Illuminate\Support\Facades\Schema;
 
 class WhileAneathController extends Controller
 {
@@ -37,6 +38,9 @@ class WhileAneathController extends Controller
     public function store(StoreWhileAneathRequest $request)
     {
         //
+     
+        return WhileAneath::create($request->all());
+
     }
 
     /**
@@ -72,6 +76,11 @@ class WhileAneathController extends Controller
     {
         //
     }
+    public function fileid($id)
+    {
+        
+        return WhileAneath::where('file_id', '=' ,$id)->get();
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -83,4 +92,7 @@ class WhileAneathController extends Controller
     {
         //
     }
+
+
+    
 }

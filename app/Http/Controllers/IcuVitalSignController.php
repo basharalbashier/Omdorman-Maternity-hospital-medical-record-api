@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreIcuNurseNoteRequest;
-use App\Http\Requests\UpdateIcuNurseNoteRequest;
-use App\Models\IcuNurseNote;
+use App\Http\Requests\StoreIcuVitalSignRequest;
+use App\Http\Requests\UpdateIcuVitalSignRequest;
+use App\Models\IcuVitalSign;
 
-class IcuNurseNoteController extends Controller
+class IcuVitalSignController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,22 +31,22 @@ class IcuNurseNoteController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreIcuNurseNoteRequest  $request
+     * @param  \App\Http\Requests\StoreIcuVitalSignRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreIcuNurseNoteRequest $request)
+    public function store(StoreIcuVitalSignRequest $request)
     {
         //
-        return IcuNurseNote::create($request->all());
+        return IcuVitalSign::create($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\IcuNurseNote  $icuNurseNote
+     * @param  \App\Models\IcuVitalSign  $icuVitalSign
      * @return \Illuminate\Http\Response
      */
-    public function show(IcuNurseNote $icuNurseNote)
+    public function show(IcuVitalSign $icuVitalSign)
     {
         //
     }
@@ -54,10 +54,10 @@ class IcuNurseNoteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\IcuNurseNote  $icuNurseNote
+     * @param  \App\Models\IcuVitalSign  $icuVitalSign
      * @return \Illuminate\Http\Response
      */
-    public function edit(IcuNurseNote $icuNurseNote)
+    public function edit(IcuVitalSign $icuVitalSign)
     {
         //
     }
@@ -65,11 +65,11 @@ class IcuNurseNoteController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateIcuNurseNoteRequest  $request
-     * @param  \App\Models\IcuNurseNote  $icuNurseNote
+     * @param  \App\Http\Requests\UpdateIcuVitalSignRequest  $request
+     * @param  \App\Models\IcuVitalSign  $icuVitalSign
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateIcuNurseNoteRequest $request, IcuNurseNote $icuNurseNote)
+    public function update(UpdateIcuVitalSignRequest $request, IcuVitalSign $icuVitalSign)
     {
         //
     }
@@ -77,18 +77,16 @@ class IcuNurseNoteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\IcuNurseNote  $icuNurseNote
+     * @param  \App\Models\IcuVitalSign  $icuVitalSign
      * @return \Illuminate\Http\Response
      */
-    public function destroy(IcuNurseNote $icuNurseNote)
+    public function destroy(IcuVitalSign $icuVitalSign)
     {
         //
     }
-
-
     public function fileid($id)
     {
         
-        return IcuNurseNote::where('file_id', '=' ,$id)->get();
+        return IcuVitalSign::where('file_id', '=' ,$id)->get();
     }
 }

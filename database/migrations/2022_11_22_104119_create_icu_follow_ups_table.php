@@ -56,6 +56,7 @@ return new class extends Migration
             $table->string('mode')->nullable();
             $table->string('vt')->nullable();
             $table->string('rr')->nullable();
+            $table->string('o2')->nullable();
             $table->string('pip')->nullable();
             $table->string('platea')->nullable();
             $table->string('resistance')->nullable();
@@ -64,6 +65,7 @@ return new class extends Migration
             $table->string('nif')->nullable();
             $table->text('git')->nullable();
             $table->text('us')->nullable();
+            $table->text('obs')->nullable();
             $table->text('fetal_heart')->nullable();
             $table->text('surgical_drains')->nullable();
             $table->string('postive_culture_site')->nullable();
@@ -75,6 +77,7 @@ return new class extends Migration
             $table->string('ett')->nullable();
             $table->string('na')->nullable();
             $table->string('k')->nullable();
+            $table->string('mg')->nullable();
             $table->string('ci')->nullable();
             $table->string('bicarb')->nullable();
             $table->string('po4')->nullable();

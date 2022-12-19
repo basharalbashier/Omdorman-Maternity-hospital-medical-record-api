@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class AfterAneath extends Model
 {
     use HasFactory;
+    protected $guarded=[];
 }

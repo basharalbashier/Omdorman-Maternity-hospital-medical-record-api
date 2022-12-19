@@ -15,6 +15,24 @@ return new class extends Migration
     {
         Schema::create('after_aneaths', function (Blueprint $table) {
             $table->id();
+            $table->text('respon')->nullable();
+            $table->text('know')->nullable();
+            $table->text('can_protect')->nullable();
+
+            $table->text('back_normal')->nullable();
+            $table->text('painless')->nullable();
+            $table->text('vomit')->nullable();
+            $table->text('time_of_accedent')->nullable();
+            $table->text('blood_drop')->nullable();
+            $table->text('breath_drop')->nullable();
+            $table->text('coma')->nullable();
+            $table->text('contin_paralisied')->nullable();
+            $table->text('allerg')->nullable();
+            $table->text('breath_vomit')->nullable();
+            $table->text('heart_attack')->nullable();
+            $table->string('dr_id');
+            $table->string('patient_id');
+            $table->string('file_id');
             $table->timestamps();
         });
     }
