@@ -18,7 +18,6 @@ return new class extends Migration
             $table->text('respon')->nullable();
             $table->text('know')->nullable();
             $table->text('can_protect')->nullable();
-
             $table->text('back_normal')->nullable();
             $table->text('painless')->nullable();
             $table->text('vomit')->nullable();

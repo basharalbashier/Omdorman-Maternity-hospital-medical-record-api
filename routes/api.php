@@ -99,7 +99,7 @@ Route::post('/nutr/add', [NutritionAssessmentFormController::class, 'store']);
 // Route::group(['middleware'=>['auth:sanctum']],function(){
 
 Route::post('/user/logout', [UserController::class, 'logout']);
-Route::get('/user', [UserController::class, 'index']);
+Route::get('/user/f/{id}', [UserController::class, 'index']);
 // Route::get('/patient',[PatientController::class,'index']);
 Route::get('/patient/{unit}', [PatientController::class, 'show']);
 ///////
@@ -108,7 +108,7 @@ Route::get('/patient', [PatientController::class, 'index']);
 Route::get('/patient/f/{id}', [PatientController::class, 'find']);
 Route::get('/file', [PatientFileController::class, 'index']);
 Route::get('/file/unit/{unit}', [PatientFileController::class, 'unit']);
-Route::get('/lab', [LabRequestFormController::class, 'index']);
+Route::get('/lab/f/{id}', [LabRequestFormController::class, 'index']);
 Route::get('/us', [USRequestController::class, 'index']);
 Route::get('/icu', [IcuAdmissionController::class, 'index']);
 ///////    

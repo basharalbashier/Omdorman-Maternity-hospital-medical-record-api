@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('while_aneaths', function (Blueprint $table) {
             $table->id();
-
             $table->text('benth')->nullable();
             $table->text('iscolen')->nullable();
             $table->text('trobeen')->nullable();

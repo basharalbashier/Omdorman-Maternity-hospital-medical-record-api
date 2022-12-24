@@ -1,11 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Database\Schema\Blueprint;
 use App\Http\Requests\StoreBeforAneathRequest;
 use App\Http\Requests\UpdateBeforAneathRequest;
 use App\Models\BeforAneath;
-use Illuminate\Support\Facades\Schema;
 
 class BeforAneathController extends Controller
 {

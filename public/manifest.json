@@ -1,6 +1,6 @@
 {
-    "name": "aldayat_screens",
-    "short_name": "aldayat_screens",
+    "name": "dashboard",
+    "short_name": "dashboard",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
