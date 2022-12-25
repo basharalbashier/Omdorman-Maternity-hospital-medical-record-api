@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreLabRequestFormRequest;
 use App\Http\Requests\UpdateLabRequestFormRequest;
 use App\Models\LabRequestForm;
+use Illuminate\Support\Facades\Schema;
 
 class LabRequestFormController extends Controller
 {
@@ -42,7 +43,6 @@ class LabRequestFormController extends Controller
         //
         $request->validate([
             'money'=>'required',
-   
         ]);
         return LabRequestForm::create($request->all());
     }

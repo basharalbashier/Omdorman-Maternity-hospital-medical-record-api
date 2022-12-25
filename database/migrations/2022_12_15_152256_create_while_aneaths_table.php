@@ -39,7 +39,6 @@ return new class extends Migration
             $table->text('another_medicin')->nullable();
             $table->text('type')->nullable();
             $table->text('type_ana')->nullable();
-
             $table->string('dr_id');
             $table->string('patient_id');
             $table->string('file_id');
