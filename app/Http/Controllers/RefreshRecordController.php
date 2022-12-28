@@ -51,6 +51,7 @@ class RefreshRecordController extends Controller
     public function fileid($id)
     {
         
+        
         return RefreshRecord::where('file_id', '=' ,$id)->get();
     }
     /**
@@ -86,4 +87,8 @@ class RefreshRecordController extends Controller
     {
         //
     }
+
+
+
+    
 }

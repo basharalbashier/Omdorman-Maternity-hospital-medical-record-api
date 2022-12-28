@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('refresh_records', function (Blueprint $table) {
             $table->id();
+            $table->string('time')->nullable();
             $table->string('prus')->nullable();
             $table->string('puls')->nullable();
             $table->string('breath')->nullable();
