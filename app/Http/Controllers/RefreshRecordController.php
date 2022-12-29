@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreRefreshRecordRequest;
 use App\Http\Requests\UpdateRefreshRecordRequest;
 use App\Models\RefreshRecord;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class RefreshRecordController extends Controller
 {
@@ -36,6 +38,7 @@ class RefreshRecordController extends Controller
      */
     public function store(StoreRefreshRecordRequest $request)
     {
+     
         return RefreshRecord::create($request->all());    }
 
     /**
