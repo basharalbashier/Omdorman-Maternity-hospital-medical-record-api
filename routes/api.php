@@ -205,7 +205,7 @@ Route::get('/nurseobserv/fileid/{fileid}', [NurseObservationNoteController::clas
 Route::get('/nurseprog/fileid/{fileid}', [NurseProgressNoteController::class, 'fileid']);
 Route::get('/nutr/fileid/{fileid}', [NutritionAssessmentFormController::class, 'fileid']);
 Route::post('/obs/fileid/{fileid}', [ObstHisoryController::class, 'fileid']);
-Route::get('/operation/fileid/{fileid}', [OperationNotesController::class, 'fileid']);
+Route::get('/operation/f/{fileid}', [OperationNotesController::class, 'fileid']);
 Route::get('/recordatt/fileid/{fileid}', [RecordOfAttendanceAtTheTimeOfDeliveryController::class, 'file_id']);
 Route::get('/regulardrug/fileid/{fileid}', [RegularDrugController::class, 'fileid']);
 Route::get('/regulardrugdos/fileid/{fileid}', [ReqularDrugsDosageController::class, 'fileid']);
