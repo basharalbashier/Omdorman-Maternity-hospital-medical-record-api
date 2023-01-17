@@ -181,14 +181,14 @@ Route::post('/statistic/patientid/{patientid}', [StatisticFormController::class,
 Route::post('/treat/patientid/{patientid}', [TreatmentOrderSheetController::class, 'patientid']);
 Route::post('/usrequest/patientid/{patientid}', [USRequestController::class, 'patientid']);
 Route::post('/usresponse/patientid/{patientid}', [USResponseController::class, 'patientid']);
-///
+//
 Route::get('/antaddm/fileid/{fileid}', [AntAddmController::class, 'fileid']);
 Route::get('/antenaddmission/fileid/{fileid}', [AntenAddmissionFollowUpController::class, 'fileid']);
 Route::get('/antfollowup/fileid/{fileid}', [AntFollowUpController::class, 'fileid']);
 Route::get('/antico/fileid/{fileid}', [AnticoagulationChartController::class, 'fileid']);
 Route::get('/asrequired/fileid/{fileid}', [AsRequiredAndPostOperativeDrugeController::class, 'fileid']);
 Route::get('/clinical/fileid/{fileid}', [ClinicalDischargeSummaryController::class, 'fileid']);
-Route::get('/deliv/fileid/{fileid}', [DeliveryAndPostnatalController::class, 'fileid']);
+Route::get('/deliv/f/{fileid}', [DeliveryAndPostnatalController::class, 'fileid']);
 Route::get('/disgdrug/fileid/{fileid}', [DischargeDrugsController::class, 'fileid']);
 Route::get('/dprog/fileid/{fileid}', [DoctorProgressNoteController::class, 'fileid']);
 Route::get('/hresult/fileid/{fileid}', [HaematologyResultController::class, 'fileid']);
@@ -211,11 +211,11 @@ Route::get('/regulardrug/fileid/{fileid}', [RegularDrugController::class, 'filei
 Route::get('/regulardrugdos/fileid/{fileid}', [ReqularDrugsDosageController::class, 'fileid']);
 Route::get('/statistic/fileid/{fileid}', [StatisticFormController::class, 'fileid']);
 Route::get('/treat/fileid/{fileid}', [TreatmentOrderSheetController::class, 'fileid']);
-Route::get('/usrequest/fileid/{fileid}', [USRequestController::class, 'fileid']);
-Route::get('/usresponse/fileid/{fileid}', [USResponseController::class, 'fileid']);
+Route::get('/usrequest/f/{fileid}', [USRequestController::class, 'fileid']);
+Route::get('/usresponse/f/{fileid}', [USResponseController::class, 'fileid']);
 Route::get('/usresponse/request_id', [USResponseController::class, 'requestid']);
-Route::get('/vagin/{fileid}', [USResponseController::class, 'fileid']);
-//new routes
+// Route::get('/vagin/{fileid}', [VaginalExamFindingController, 'fileid']);
+//new routess
 Route::post('/gyn/add', [GynaeFileController::class, 'store']);
 Route::post('/gynadm/add', [GynaeAdmissionController::class, 'store']);
 Route::post('/gynanae/add', [GynaeAnaesthesiaListController::class, 'store']);
@@ -312,8 +312,8 @@ Route::get('/icu/{fileid}', [IcuAdmissionController::class, 'fileid']);
 Route::get('/icufinal/{fileid}', [IcuFinalOutComeController::class, 'fileid']);
 Route::get('/icufollow/f/{fileid}', [IcuFollowUpController::class, 'fileid']);
 Route::get('/icunurse/f/{fileid}', [IcuNurseNoteController::class, 'fileid']);
-Route::get('/icureq/{fileid}', [IcuRequestController::class, 'fileid']);
-Route::get('/icuresp/{fileid}', [IcuResponseController::class, 'fileid']);
+Route::get('/icureq/f/{fileid}', [IcuRequestController::class, 'fileid']);
+// Route::get('/icuresp/fileid/{fileid}', [IcuResponseController::class, 'fileid']);
 Route::get('/icurescu/f/{fileid}', [IcuResusitionRecordController::class, 'fileid']);
 Route::get('/icuvital/f/{fileid}', [IcuVitalSignController::class, 'fileid']);
 Route::get('/neo/f/{fileid}', [NeonatalAdmissionController::class, 'fileid']);

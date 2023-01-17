@@ -16,6 +16,14 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
+
+        $schedule->call(function () {
+            $command = escapeshellcmd(base_path('database/backup/main'));
+            $output = shell_exec($command);
+        })->everyMinute();
+        //->appendOutputTo(storage_path('logs/my_log.log'))
+        // daily()
+
     }
 
     /**

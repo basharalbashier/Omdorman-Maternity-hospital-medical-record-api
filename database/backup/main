@@ -1,0 +1,50 @@
+#!/usr/bin/env python3.10
+import os
+import json
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
+import datetime
+import time
+INITIAL_FILE = "./cert/initial.json"
+
+
+def uploadTheShit():
+
+     try:
+         os.chdir(os.path.dirname(os.path.abspath(__file__)))
+         with open(INITIAL_FILE) as f:
+             jsn = json.load(f)
+             folder_id = jsn["folder_id"]
+             
+         print('Trying to access local sttings..')
+
+         gauth = GoogleAuth(settings_file='settings.yml')
+         gauth.LocalWebserverAuth()
+         print('Access done ..')
+         print('Trying to access drive Auth..')
+
+         drive = GoogleDrive(auth=gauth)
+         print('Access done ..')
+
+         print('Trying to create drive folder..')
+         folder_metadata = {
+             'title': str(datetime.datetime.now()),
+             'parents': [{"kind": "drive#fileLink", "id": folder_id}]
+         }
+         folder = drive.CreateFile(folder_metadata)
+         folder.SetContentFile('../database.sqlite')
+         folder.Upload()
+         print("done")
+
+     except KeyboardInterrupt as error:
+         uploadTheShit()
+
+
+
+if __name__ == '__main__':
+  print('Starting back up..')
+  uploadTheShit()
+
+
+
+

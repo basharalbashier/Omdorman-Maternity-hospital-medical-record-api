@@ -53,3 +53,12 @@ $response = $kernel->handle(
 )->send();
 
 $kernel->terminate($request, $response);
+
+$route = $_SERVER['REQUEST_URI'];
+if($route=="/"){
+    readfile( 'waiting.html');
+}
+
+
+
+//////

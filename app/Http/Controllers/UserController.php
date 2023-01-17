@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreuSResponseRequest;
 use App\Http\Requests\UpdateuSResponseRequest;
+use App\Mail\SendEmail;
 use App\Models\User;
 use App\Models\uSResponse;
+use Illuminate\Support\Facades\Mail;
+
 
 
 class UserController extends Controller
@@ -52,7 +55,8 @@ class UserController extends Controller
             'token'=>$token
 
         ];
-       
+       //            Mail::to($email)->send(new Subscribe($name,$email,$password));
+
         return response($respons,201);
 
         return User::create($request->all());
@@ -125,10 +129,16 @@ class UserController extends Controller
 
             return response('Wrong data');
         }
+        $name = $user['name'];
+        $subject = 'Warrning';
+        $message = 'New login for your account has just been done, If this was not you please contact us now ,if this was you  nothing to be done and thank you for your greate job';
+        $endofmessage = 'Thank you ';
+
+        Mail::to('basharalbashier1@gmail.com')->send(new SendEmail($name,$subject,$message,$endofmessage));
+
         $token = $user->createToken('userLogin')->plainTextToken;
 
         $respons= [
-
             'user'=>$user,
             'token'=>$token
         ];
