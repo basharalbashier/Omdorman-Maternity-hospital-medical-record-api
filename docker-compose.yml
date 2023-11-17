@@ -1,0 +1,11 @@
+version: '2'
+services:
+    hospital:
+        container_name: theHospitalApi
+        build: .
+        ports:
+            - '8000:8000'
+        environment:
+            PORT: 8000
+        volumes:
+            - '.:/usr/src/app'
